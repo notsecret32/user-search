@@ -1,4 +1,5 @@
 import { IUser } from '@/types';
+import { Briefcase, Mail, Phone } from 'lucide-react';
 import { FC } from 'react';
 import styled from 'styled-components';
 import { Avatar } from './avatar';
@@ -24,6 +25,20 @@ export const User: FC<UserProps> = ({
           <p>{username}</p>
         </CardInitials>
       </CardHeader>
+      <CardContent>
+        <CardRow>
+          <Mail />
+          <p>{email}</p>
+        </CardRow>
+        <CardRow>
+          <Phone />
+          <p>{phone}</p>
+        </CardRow>
+        <CardRow>
+          <Briefcase />
+          <p>{company.name}</p>
+        </CardRow>
+      </CardContent>
     </Card>
   );
 };
@@ -57,5 +72,23 @@ const CardInitials = styled.div`
   p {
     font-size: 14px;
     color: #71737e;
+  }
+`;
+
+const CardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px 0 10px 12px;
+`;
+
+const CardRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  svg {
+    color: #71737e;
+    width: 20px;
   }
 `;
