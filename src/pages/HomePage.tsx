@@ -9,6 +9,12 @@ export const HomePage: FC = () => {
 
   const { users, getUsersByName } = useUsersStore(state => state);
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      getUsersByName(name);
+    }
+  };
+
   useEffect(() => {
     getUsersByName('');
   }, [getUsersByName]);
@@ -19,6 +25,7 @@ export const HomePage: FC = () => {
       <SearchBlock>
         <Input
           placeholder='Имя пользователя'
+          onKeyDown={handleKeyDown}
           onChange={e => setName(e.target.value)}
           value={name}
         />
