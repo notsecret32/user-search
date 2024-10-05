@@ -1,13 +1,17 @@
 import { UserList } from '@/components/shared';
 import { Button, Input } from '@/components/ui';
 import { useUsersStore } from '@/store';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 export const HomePage: FC = () => {
   const [name, setName] = useState('');
 
   const { users, getUsersByName } = useUsersStore(state => state);
+
+  useEffect(() => {
+    getUsersByName('');
+  }, [getUsersByName]);
 
   return (
     <Container>

@@ -28,4 +28,5 @@ const Container = styled.section`
 const Error = styled.p`
   text-align: center;
   margin: 0;
+  grid-column: span 3;
 `;
