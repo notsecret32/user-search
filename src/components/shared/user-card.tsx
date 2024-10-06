@@ -6,7 +6,7 @@ import { Avatar } from './avatar';
 
 type UserProps = IUser;
 
-export const User: FC<UserProps> = ({
+export const UserCard: FC<UserProps> = ({
   id,
   name,
   username,
@@ -44,7 +44,6 @@ export const User: FC<UserProps> = ({
 };
 
 const Card = styled.div`
-  width: 280px;
   display: flex;
   flex-direction: column;
   padding: 10px;

@@ -1,5 +1,5 @@
 import { Avatar } from './avatar';
-import { User } from './user';
+import { UserCard } from './user-card';
 import { UserList } from './user-list';
 
-export { Avatar, User, UserList };
+export { Avatar, UserCard, UserList };
