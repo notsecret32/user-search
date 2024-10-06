@@ -7,13 +7,10 @@ import { Avatar } from './avatar';
 type UserProps = IUser;
 
 export const UserCard: FC<UserProps> = ({
-  id,
   name,
   username,
   email,
   phone,
-  website,
-  address,
   company,
 }) => {
   return (
