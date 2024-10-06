@@ -1,7 +1,7 @@
 import { IUser } from '@/types';
 import { FC } from 'react';
 import styled from 'styled-components';
-import { User } from './user';
+import { UserCard } from './user-card';
 
 interface UserListProps {
   users: IUser[];
@@ -9,13 +9,17 @@ interface UserListProps {
 
 export const UserList: FC<UserListProps> = ({ users }) => {
   return (
-    <Container>
+    <>
       {users && users.length > 0 ? (
-        users.map(user => <User key={user.id} {...user} />)
+        <Container>
+          {users.map(user => (
+            <UserCard key={user.id} {...user} />
+          ))}
+        </Container>
       ) : (
         <Error>Пользователи не найдены</Error>
       )}
-    </Container>
+    </>
   );
 };
 
@@ -28,5 +32,4 @@ const Container = styled.section`
 const Error = styled.p`
   text-align: center;
   margin: 0;
-  grid-column: span 3;
 `;

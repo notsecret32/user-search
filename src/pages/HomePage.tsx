@@ -40,7 +40,7 @@ const Container = styled.main`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: max-content;
+  width: 1000px;
   margin: 20px auto;
 `;
 
