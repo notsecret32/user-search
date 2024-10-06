@@ -16,7 +16,7 @@ export const UserCard: FC<UserProps> = ({
   return (
     <Card>
       <CardHeader>
-        <Avatar>{name[0].toUpperCase()}</Avatar>
+        <Avatar>{name[0].toUpperCase() ?? 'U'}</Avatar>
         <Initials>
           <h1>{name}</h1>
           <p>{username}</p>
@@ -25,15 +25,15 @@ export const UserCard: FC<UserProps> = ({
       <CardContent>
         <Row>
           <Mail />
-          <p>{email}</p>
+          <p>{email ?? '—'}</p>
         </Row>
         <Row>
           <Phone />
-          <p>{phone}</p>
+          <p>{phone ?? '—'}</p>
         </Row>
         <Row>
           <Briefcase />
-          <p>{company.name}</p>
+          <p>{company.name ?? '—'}</p>
         </Row>
       </CardContent>
     </Card>

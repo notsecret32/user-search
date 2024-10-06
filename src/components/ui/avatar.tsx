@@ -1,20 +1,15 @@
-import { FC } from 'react';
 import styled from 'styled-components';
 
 interface AvatarProps {
-  children: React.ReactNode;
+  $width?: number;
 }
 
-export const Avatar: FC<AvatarProps> = ({ children }) => {
-  return <Container>{children}</Container>;
-};
-
-const Container = styled.div`
+export const Avatar = styled.div<AvatarProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 48px;
-  height: 48px;
+  width: ${({ $width }) => ($width ? `${$width}px` : '48px')};
+  height: ${({ $width }) => ($width ? `${$width}px` : '48px')};
   border-radius: 100%;
   background-color: #f4f4f5;
 `;
