@@ -1,9 +1,12 @@
 import { usersApi } from '@/api';
+import { errorMessages } from '@/constants';
 import { IUser } from '@/types';
 import { create } from 'zustand';
 
 type State = {
   users: IUser[];
+  isLoading: boolean;
+  error: string;
 };
 
 type Action = {
@@ -12,8 +15,14 @@ type Action = {
 
 export const useUsersStore = create<State & Action>(set => ({
   users: [],
+  isLoading: false,
+  error: '',
   getUsersByName: async name => {
-    const { data } = await usersApi.getUsersByName(name);
-    set({ users: data });
+    set({ isLoading: true });
+    usersApi
+      .getUsersByName(name)
+      .then(response => set({ users: response.data }))
+      .catch(error => set({ error: errorMessages.getError(error.code) }))
+      .finally(() => set({ isLoading: false }));
   },
 }));
