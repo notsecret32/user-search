@@ -1,50 +1,40 @@
-# React + TypeScript + Vite
+# User Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An application for searching for users by name. The
+following technologies were used for development: Vite,
+React, Typescript, Zustand, styled-components, axios and
+more. The [jsonplaceholder](https://jsonplaceholder.typicode.com/)
+service is used as an API.
 
-Currently, two official plugins are available:
+## How to install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Requirements:
 
-## Expanding the ESLint configuration
+- **pnpm:** 9.6.0
+- **NodeJS:** 20.16.0
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Installation Instructions:
 
-- Configure the top-level `parserOptions` property like this:
+```bash
+# Clone the repository
+git clone https://github.com/notsecret32/user-search.git
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# Go to the project folder
+cd user-search
+
+# Install dependencies
+pnpm install
+
+# Launch the application
+pnpm dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Features
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+The following features are implemented in the application:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Simple and intuitive design
+- Getting users from the API
+- Search for users by name
+- Error handling
+- Loading status
